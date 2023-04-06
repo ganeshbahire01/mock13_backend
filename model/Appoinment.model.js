@@ -11,6 +11,6 @@ const appointmentSchema = mongoose.Schema({
   fee: Number,
 });
 
-const appoinmentModel = mongoose.model("user", appointmentSchema);
+const appoinmentModel = mongoose.model("appoinment", appointmentSchema);
 
 module.exports = appoinmentModel;

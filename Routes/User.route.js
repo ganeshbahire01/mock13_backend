@@ -4,7 +4,7 @@ const jwt = require("jsonwebtoken");
 const UserModel = require("../model/User.model");
 const userRoutes = express.Router();
 
-userRoutes.post("/register", async (req, res) => {
+userRoutes.post("/signup", async (req, res) => {
   const {email, password } = req.body;
   try {
     bcrypt.hash(password, 4, async (err, hash) => {
@@ -20,6 +20,7 @@ userRoutes.post("/register", async (req, res) => {
       }
     });
   } catch (error) {
+    res.send(error.message)
     console.log(error);
   }
 });
